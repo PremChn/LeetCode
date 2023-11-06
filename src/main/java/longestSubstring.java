@@ -2,7 +2,7 @@ import java.util.HashSet;
 
 public class longestSubstring {
     public static void main(String args[]){
-        String s = "abcba";
+        String s = "baabc";
         longestSub(s);
     }
 

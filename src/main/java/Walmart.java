@@ -23,7 +23,7 @@ public class Walmart {
     string5 = "dad"
     find(words, string5) => "-" */
     public static void main(String[] args) {
-        List<String> words = new ArrayList<>(Arrays.asList("baby", "cat", "referee",  "dada", "dog", "bird", "ax"));
+        List<String> words = new ArrayList<>(Arrays.asList("dada", "cat", "referee", "baby", "dog", "bird", "ax"));
         String string = "dad";
         String result = find(words, string);
         System.out.println(result);
