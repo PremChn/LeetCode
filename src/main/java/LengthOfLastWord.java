@@ -27,7 +27,7 @@ public class LengthOfLastWord {
     public static int lengthOfLastWord(String s){
        if(s.length() <= 1) return 1;
 
-        //To replaced double space with single space
+        //To replace double space with single space
         s = s.replaceAll("\\s{2,}", " ");
         String[] strArray = s.split(" ");
 

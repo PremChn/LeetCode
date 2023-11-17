@@ -26,7 +26,6 @@ public class segregateOddEvenNumbersInArray {
                 int x = nums[left];
                 nums[left] = nums[right];
                 nums[right] = x;
-
                 left ++;
                 right --;
             }

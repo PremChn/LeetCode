@@ -2,7 +2,8 @@ import java.util.*;
 
 /*
 Leet Code Problem Number: 15
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
+such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
 Notice that the solution set must not contain duplicate triplets.
 
@@ -29,15 +30,14 @@ Explanation: The only possible triplet sums up to 0.
  */
 public class ThreeSum {
     public static void main(String args[]) {
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+        //int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
         System.out.println(threeSum(nums));
     }
-
     public static List<List<Integer>> threeSum(int[] nums) {
         if (nums == null || nums.length < 3) return new ArrayList<>();
         Arrays.sort(nums);
         Set<List<Integer>> result = new HashSet<>();
-
         for (int i = 0; i < nums.length - 2; i++) {
             int leftPointer = i + 1;
             int rightPointer = nums.length - 1;
@@ -53,7 +53,6 @@ public class ThreeSum {
                     rightPointer--;
                 }
             }
-
         }
         return new ArrayList<>(result);
     }

@@ -15,7 +15,6 @@ public class findIndexOfFirstOccurenceOfString {
     public static void main(String args[]){
         String haystack = "sadutddsad";
         String needle = "sad";
-        String temp = haystack.substring(0, needle.length());
         System.out.println(findIndexOfFirstOccurenceOfString(haystack, needle));
     }
 

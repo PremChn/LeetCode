@@ -1,31 +1,28 @@
 import java.util.Arrays;
-import java.util.HashMap;
-public class TwoSum_SortedArray {
-    /*Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-    You may assume that each input would have exactly one solution, and you may not use the same element twice.
-    You can return the answer in any order.
-    Example 1:
-    Input: nums = [2,7,11,15], target = 9
-    Output: [0,1]
-    Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].*/
 
+public class TwoSum_SortedArray {
     public static void main(String args[]){
-        int[] nums = new int[] {1,2,15,7,11};
-        int target = 9;
-        System.out.println(Arrays.toString(twoSums(nums, 9)));
+        int[] nums = {4, 8, 9, 27, 42};
+        int target = 13;
+        System.out.println(Arrays.toString(twoSumSolution(nums, target)));
     }
 
-    public static int[] twoSums(int[] a, int target){
-        int[] arr = new int[2];
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for(int i = 0; i < a.length; i++){
-            if(hashMap.containsKey(target - a[i])){
-                arr[0] = hashMap.get(target - a[i]);
-                arr[1] = i;
-
-            }
-            hashMap.put(a[i],i);
+    public static int[] twoSumSolution(int[] nums, int target){
+        int[] result = new int[2];
+        int leftPointer = 0;
+        int rightPointer = nums.length - 1;
+        while(leftPointer < rightPointer){
+            int sum = nums[leftPointer] + nums[rightPointer];
+          if(sum == target){
+              result[0] = leftPointer;
+              result[1] = rightPointer;
+              return result;
+          }else if(sum < target){
+              leftPointer++;
+          }else{
+              rightPointer--;
+          }
         }
-        return arr;
+      return nums;
     }
 }

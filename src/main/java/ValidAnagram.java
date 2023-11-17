@@ -10,12 +10,16 @@ public class ValidAnagram {
     Reference video link: https://www.youtube.com/watch?v=IRN1VcA8CGc&ab_channel=NickWhite
     */
     public static void main(String args[]){
-        String s1 = "bob";
-        String s2 = "bbo";
+        String s1 = "boba";
+        String s2 = "bboa";
         System.out.println("Is Anagram: " + isAnagram(s1, s2));
     }
     public static boolean isAnagram(String s1, String s2){
         if(s1.length() != s2.length()) return false;
+        //To check the string contains other than alphabets
+        if (!s1.matches("[a-zA-Z]+") || !s2.matches("[a-zA-Z]+")) {
+            return false;
+        }
         int[] chars_counts = new int[26];
         for(int i = 0; i < s1.length(); i++){
             chars_counts[s1.charAt(i) - 'a']++;
